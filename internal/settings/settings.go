@@ -20,8 +20,8 @@ const (
 
 type Settings struct {
 	Paths   Path               `toml:"paths"`
-	Project Project            `toml:"project"`
 	UI      UI                 `toml:"ui"`
+	App     Profile            `toml:"app"`
 	Profile map[string]Profile `toml:"profile"`
 }
 
@@ -40,12 +40,21 @@ type Profile struct {
 
 type Project struct {
 	ProtobufMonorepo ProtobufMonorepo `toml:"protobuf_monorepo"`
+	Templates        Templates        `toml:"templates"`
 }
 
 type ProtobufMonorepo struct {
 	RepositoryName string `toml:"repository_name" default:"protobuf-workspace"`
 	ProjectName    string `toml:"project_name" default:"services"`
 	VcsPath        string `toml:"vcs_path" default:"github.com/your-organization"`
+}
+
+type Templates struct {
+	Protobuf ProtobufTemplates `toml:"protobuf"`
+}
+
+type ProtobufTemplates struct {
+	CustomAuthName string `toml:"custom_auth_name" default:"scopes"`
 }
 
 type UI struct {

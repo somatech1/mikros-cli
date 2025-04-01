@@ -14,6 +14,7 @@ type Context struct {
 	ServiceName      string
 	Version          string
 	EntityName       string
+	CustomAuthName   string `default:"scopes"`
 	RPCMethods       []*RPC
 	CustomRPCs       []*RPC
 	MainPackageName  string

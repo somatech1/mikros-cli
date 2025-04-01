@@ -18,16 +18,19 @@
   # Sets the path to load feature plugins
   plugins.features = ""
 
-[project]
-  # Sets default name of a protobuf repository created by the CLI
-  protobuf_monorepo.repository_name = ""
+[app]
+  [app.project]
+    # Sets default name of a protobuf repository created by the CLI
+    protobuf_monorepo.repository_name = ""
 
-  # Sets the default project name of your protobuf files.
-  protobuf_monorepo.project_name = ""
+    # Sets the default project name of your protobuf files.
+    protobuf_monorepo.project_name = ""
 
-  # Sets the name of your VCS organization path to be used in generated project,
-  # like in the go.mod file.
-  protobuf_monorepo.vcs_path = ""
+    # Sets the name of your VCS organization path to be used in generated project,
+    # like in the go.mod file.
+    protobuf_monorepo.vcs_path = ""
+
+    templates.custom_auth_name = ""
 
 [profile.one]
 project.protobuf.repository_name = ""
